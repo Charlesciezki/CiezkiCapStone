@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+    ViewBag.Title = "Admin Control Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin Control Page</title>
+</head>
+<body>
+    <div>
+        <h2>Admin Control Page</h2>
+        <p>Blooop blee blop</p>
+        @using (Html.BeginForm("Appointments", "Admin"))
+        {
+            @Html.AntiForgeryToken()
+            <input type="submit" value="Appointments" class="btn btn-default" />
+        }
+    </div>
+</body>
+</html>
+

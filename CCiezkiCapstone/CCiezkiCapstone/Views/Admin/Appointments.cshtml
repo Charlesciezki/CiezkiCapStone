@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Appointments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin Control Page</title>
+</head>
+<body>
+    <div>
+        <h2>Appointments</h2>
+        <p>Blooop blee blop</p>
+        @*@using (Html.BeginForm("Index", "Home"))
+        {
+            @Html.AntiForgeryToken()
+            <input type="submit" value="Programs" class="btn btn-default" />
+        }*@
+
+        @section scripts{
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#calendar').fullCalendar({
+                        theme: true,
+                        header: {
+                            left: 'prev, next today',
+                            center: 'title',
+                            right: 'month, agendaWeek, agendaDay'
+                        },
+                        defaultView: 'agendaDay',
+                        editable: true,
+                        allDaySlot: false,
+                        selectable: true,
+                        slotMinutes: 15,
+                        events: "/home/getevents/"
+                    });
+                });
+            </script>
+        }
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="calendar">
+                </div>
+            </div>
+
+        </div>
+</body>
+</html>
+

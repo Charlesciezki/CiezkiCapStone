@@ -13,6 +13,11 @@ namespace CCiezkiCapstone.Controllers
             return View();
         }
 
+        public ActionResult AdminControls()
+        {
+            return View();
+        } 
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
