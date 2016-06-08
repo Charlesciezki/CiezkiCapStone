@@ -234,6 +234,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\FullcalendarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -243,8 +245,13 @@
     <Compile Include="Migrations\201606061413538_initial migration.Designer.cs">
       <DependentUpon>201606061413538_initial migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606081959309_calendar events.cs" />
+    <Compile Include="Migrations\201606081959309_calendar events.Designer.cs">
+      <DependentUpon>201606081959309_calendar events.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\FullcalendarModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -402,6 +409,12 @@
     <Content Include="Views\Shared\_Admin_Layout.cshtml" />
     <Content Include="Views\Home\AdminControls.cshtml" />
     <Content Include="Views\Admin\Appointments.cshtml" />
+    <Content Include="Views\Customer\CustomerAppointments.cshtml" />
+    <Content Include="Views\Fullcalendar\Create.cshtml" />
+    <Content Include="Views\Fullcalendar\Delete.cshtml" />
+    <Content Include="Views\Fullcalendar\Details.cshtml" />
+    <Content Include="Views\Fullcalendar\Edit.cshtml" />
+    <Content Include="Views\Fullcalendar\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -416,6 +429,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606061413538_initial migration.resx">
       <DependentUpon>201606061413538_initial migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606081959309_calendar events.resx">
+      <DependentUpon>201606081959309_calendar events.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

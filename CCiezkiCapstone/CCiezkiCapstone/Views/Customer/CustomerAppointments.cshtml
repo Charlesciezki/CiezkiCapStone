@@ -1,25 +1,21 @@
-﻿
-@{
-    ViewBag.Title = "Appointments";
-    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Admin Appointment Control Page</title>
+    <title>Customer Appointment Page</title>
 </head>
 <body>
     <div>
-        <h2>Appointments</h2>
+        <h2>Request an Appointment</h2>
         @*@using (Html.BeginForm("Index", "Home"))
-        {
-            @Html.AntiForgeryToken()
-            <input type="submit" value="Programs" class="btn btn-default" />
-        }*@
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Programs" class="btn btn-default" />
+            }*@
 
         @section scripts{
             <script type="text/javascript">
@@ -44,7 +40,6 @@
                         select: function(start, end, allDay)
                         {
 
-
                             var title = prompt('Event Title:');
 
                             if (title)
@@ -54,15 +49,17 @@
                                 var endTime = prompt('enter end time')
                                 var dateStart = prompt('enter start date, you only need DD')
                                 var dateEnd = prompt('enter end date, you only need DD')
+                                var cleaningInfo = prompt('Enter number of rooms and approx. SQFT')
                                 calendar.fullCalendar('renderEvent',
                                     {
                                         title: title,
                                         start: new Date(y, m, dateStart, startHour, startMinute),
                                         end: new Date(y, m, dateEnd, endTime),
+                                        data: cleaningInfo,
                                         allDay: false
 
                                     },
-                                    true 
+                                    true
                                 );
                             }
                             calendar.fullCalendar('unselect');
@@ -71,10 +68,11 @@
                         editable: true,
 
                         events: [
-                            
+
                         ]
+
                     });
-			
+
                 });
 
             </script>
