@@ -18,14 +18,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("The non-admin view", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Welcome valued customer!", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse" >
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @*<li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
-                    <li>@Html.ActionLink("Request Appointment", "CustomerAppointments", "Customer")</li>
+                    @*<li>@Html.ActionLink("Request Appointment", "CustomerAppointments", "Customer")</li>*@
                     <li>@Html.ActionLink("Fill out appointment form", "Index", "Fullcalendar")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")

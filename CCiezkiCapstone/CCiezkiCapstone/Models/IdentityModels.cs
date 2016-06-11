@@ -30,6 +30,8 @@ namespace CCiezkiCapstone.Models
             return new ApplicationDbContext();
         }
         public DbSet<FullcalendarModel> FullcalendarModel { get; set; }
+
+        public System.Data.Entity.DbSet<CCiezkiCapstone.Models.InventoryModel> InventoryModels { get; set; }
     }
 
 }

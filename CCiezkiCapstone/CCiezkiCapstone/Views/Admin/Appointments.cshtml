@@ -1,9 +1,15 @@
-﻿
-@{
+﻿@model IEnumerable<CCiezkiCapstone.Models.FullcalendarModel>
+
+@{ 
     ViewBag.Title = "Appointments";
     Layout = "~/Views/Shared/_Admin_Layout.cshtml";
-}
+    List<List<Object>> theAppointments = new List<List<Object>>();
 
+}
+@foreach (var item in Model)
+{
+    theAppointments.Add(new List<object>() {item.title, item.date, item.start, item.description, item.event_id });
+}
 
 <!DOCTYPE html>
 
@@ -43,49 +49,39 @@
                         slotMinutes: 15,
                         select: function(start, end, allDay)
                         {
-
-
-                            var title = prompt('Event Title:');
-
-                            if (title)
-                            {
-                                var startHour = prompt('enter start time')
-                                var startMinute = prompt('enter the minutes. example: 12:15 would be 15')
-                                var endTime = prompt('enter end time')
-                                var dateStart = prompt('enter start date, you only need DD')
-                                var dateEnd = prompt('enter end date, you only need DD')
-                                calendar.fullCalendar('renderEvent',
+                            //var title = prompt('Event Title:');
+                            //if (title)
+                            //{
+                            var events = @Html.Raw(Json.Encode(theAppointments));
+                            for(var i = 0; i < events.length; i++){
+                                calendar.fullCalendar('renderEvent', 
                                     {
-                                        title: title,
-                                        start: new Date(y, m, dateStart, startHour, startMinute),
-                                        end: new Date(y, m, dateEnd, endTime),
-                                        allDay: false
 
+                                        title: events[i][0],
+                                        start: events[i][1],
+                                        end: events[i][1],
+                                        allDay: false
                                     },
                                     true 
                                 );
                             }
+                            //}
+                            
                             calendar.fullCalendar('unselect');
                         },
-
-                        editable: true,
-
-                        events: [
-                            
-                        ]
+                        //},
+                       // editable: true,
+                        events: [],                        
+                        //});
                     });
-			
-                });
-
+                    });                
             </script>
         }
-
         <div class="row">
             <div class="col-md-12">
                 <div id="calendar">
                 </div>
             </div>
-
         </div>
 </body>
 </html>

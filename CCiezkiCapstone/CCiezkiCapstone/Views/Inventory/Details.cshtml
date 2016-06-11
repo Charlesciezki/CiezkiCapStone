@@ -1,0 +1,59 @@
+﻿@model CCiezkiCapstone.Models.InventoryModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InventoryModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.productName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.warningLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.warningLevel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.refillLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.refillLevel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

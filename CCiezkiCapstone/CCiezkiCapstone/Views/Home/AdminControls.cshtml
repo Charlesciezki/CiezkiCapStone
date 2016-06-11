@@ -13,11 +13,15 @@
 <body>
     <div>
         <h2>Admin Control Page</h2>
-        <p>Blooop blee blop</p>
         @using (Html.BeginForm("Appointments", "Admin"))
         {
             @Html.AntiForgeryToken()
             <input type="submit" value="Appointments" class="btn btn-default" />
+        }
+        @using (Html.BeginForm("Index", "Inventory"))
+        {
+            @Html.AntiForgeryToken()
+            <input type="submit" value="Inventory" class="btn btn-default" />
         }
     </div>
 </body>
