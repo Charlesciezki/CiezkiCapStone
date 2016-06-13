@@ -34,5 +34,6 @@ namespace CCiezkiCapstone.Models
         [Required]
         [Display(Name = "Refill Level")]
         public int refillLevel { get; set; }
+        
     }
 }

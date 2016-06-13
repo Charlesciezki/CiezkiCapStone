@@ -301,6 +301,18 @@
     <Compile Include="Migrations\201606091621517_inventory.Designer.cs">
       <DependentUpon>201606091621517_inventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606110137298_inventory v3.cs" />
+    <Compile Include="Migrations\201606110137298_inventory v3.Designer.cs">
+      <DependentUpon>201606110137298_inventory v3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606130147359_inventory v4.cs" />
+    <Compile Include="Migrations\201606130147359_inventory v4.Designer.cs">
+      <DependentUpon>201606130147359_inventory v4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606130201519_fixing inventory.cs" />
+    <Compile Include="Migrations\201606130201519_fixing inventory.Designer.cs">
+      <DependentUpon>201606130201519_fixing inventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -453,7 +465,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -513,6 +527,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606091621517_inventory.resx">
       <DependentUpon>201606091621517_inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606110137298_inventory v3.resx">
+      <DependentUpon>201606110137298_inventory v3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606130147359_inventory v4.resx">
+      <DependentUpon>201606130147359_inventory v4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606130201519_fixing inventory.resx">
+      <DependentUpon>201606130201519_fixing inventory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

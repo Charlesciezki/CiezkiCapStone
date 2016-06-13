@@ -20,20 +20,20 @@ namespace CCiezkiCapstone.Models
         [Display(Name = "Enter date you would like a cleaning")]
         public DateTime date { get; set; }
 
-        [Required]
-        [Display (Name = "Event Start Time")]
-        public string start { get; set; }
+        //[Required]
+        //[Display (Name = "Event Start Time")]
+        //public string start { get; set; }
 
-        [Display(Name = "Event End Time")]
-        public string end { get; set; }
+        //[Display(Name = "Event End Time")]
+        //public string end { get; set; }
 
 
-        [Display(Name = "Enter URL")]
-        public string url { get; set; }
+        //[Display(Name = "Enter URL")]
+        //public string url { get; set; }
 
-        [Required]
-        [Display(Name = "Enter description of cleaning")]
-        public string description { get; set; }
+        //[Required]
+        //[Display(Name = "Enter description of cleaning")]
+        //public string description { get; set; }
 
 
     }

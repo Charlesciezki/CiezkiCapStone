@@ -8,7 +8,7 @@
 }
 @foreach (var item in Model)
 {
-    theAppointments.Add(new List<object>() {item.title, item.date, item.start, item.description, item.event_id });
+    theAppointments.Add(new List<object>() {item.title, item.date, item.event_id });
 }
 
 <!DOCTYPE html>
@@ -47,34 +47,32 @@
                         allDaySlot: false,
                         selectable: true,
                         slotMinutes: 15,
-                        select: function(start, end, allDay)
+                        ignoreTimezone: false,
+                        select: function(start, allDay)
                         {
-                            //var title = prompt('Event Title:');
-                            //if (title)
-                            //{
                             var events = @Html.Raw(Json.Encode(theAppointments));
                             for(var i = 0; i < events.length; i++){
                                 calendar.fullCalendar('renderEvent', 
                                     {
-
+                                        //timezone: CDT,
                                         title: events[i][0],
                                         start: events[i][1],
-                                        end: events[i][1],
+                                        //end: events[i][1],
                                         allDay: false
                                     },
                                     true 
                                 );
                             }
-                            //}
-                            
                             calendar.fullCalendar('unselect');
-                        },
-                        //},
-                       // editable: true,
-                        events: [],                        
-                        //});
+                        }, 
+                        //eventRender: function(event, element) {
+                        //    element.qtip({
+                        //        content: event.description
+                        //    });
+                        //}
                     });
-                    });                
+                }); 
+                
             </script>
         }
         <div class="row">

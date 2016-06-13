@@ -18,19 +18,6 @@
         <th>
             @Html.DisplayNameFor(model => model.date)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.start)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.end)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.description)
-        </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -40,18 +27,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.start)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.end)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.url)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.event_id }) |

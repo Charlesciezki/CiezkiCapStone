@@ -24,6 +24,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Admin Controls", "AdminControls", "Home")</li>
+                    <li>@Html.ActionLink("Appointment forms", "Index", "Fullcalendar")</li>
                 </ul>
                 @Html.Partial("_Admin_LoginPartial")
             </div>
@@ -33,7 +34,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application /||\ @Html.ActionLink("About", "About", "Home") /||\ @Html.ActionLink("Contact", "Contact", "Home")</p>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application /||\ @Html.ActionLink("About", "About", "Home") /||\ @Html.ActionLink("Contact", "Contact", "Home") /||\ @Html.ActionLink("SalesForce Log in", "Login", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</p>
         </footer>
     </div>
 

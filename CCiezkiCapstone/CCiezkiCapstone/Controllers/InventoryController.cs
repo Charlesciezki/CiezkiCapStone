@@ -22,7 +22,7 @@ namespace CCiezkiCapstone.Controllers
             myMessage.From = new MailAddress("noReply@charlesCapstone.com", "noReply@charlesCapstone");
             myMessage.AddTo("charlesciezki@yahoo.com");
             myMessage.Subject = productName + " is running low!";
-            myMessage.Text = "Hello, you need to refull your " + productName + " you only have " + quantity + " left!";
+            myMessage.Text = "Hello, you need to refill your " + productName + " you only have " + quantity + " left!";
             var credentials = new NetworkCredential("quikdevstudent", "Lexusi$3"); //login credentials, don't change
             var transportWeb = new Web(credentials); //don't change
             await transportWeb.DeliverAsync(myMessage); //dont change
