@@ -2,8 +2,11 @@
     if (this.User.IsInRole("Admin"))
     {
         Layout = "~/Views/Shared/_Admin_Layout.cshtml";
-    } else
+    } else /*if (this.User.IsInRole("Customer"))*/
     {
         Layout = "~/Views/Shared/_Layout.cshtml";
-    }
+    }/* else*/
+     //{
+     //    Layout = "~/Views/Shared/_NoView_Layout.cshtml";
+     //}
 }
