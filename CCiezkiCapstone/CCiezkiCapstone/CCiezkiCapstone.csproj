@@ -289,29 +289,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606061413538_initial migration.cs" />
-    <Compile Include="Migrations\201606061413538_initial migration.Designer.cs">
-      <DependentUpon>201606061413538_initial migration.cs</DependentUpon>
+    <Compile Include="Migrations\201606172231105_capstoneV1.cs" />
+    <Compile Include="Migrations\201606172231105_capstoneV1.Designer.cs">
+      <DependentUpon>201606172231105_capstoneV1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606081959309_calendar events.cs" />
-    <Compile Include="Migrations\201606081959309_calendar events.Designer.cs">
-      <DependentUpon>201606081959309_calendar events.cs</DependentUpon>
+    <Compile Include="Migrations\201606182133357_fullCalendarV1.cs" />
+    <Compile Include="Migrations\201606182133357_fullCalendarV1.Designer.cs">
+      <DependentUpon>201606182133357_fullCalendarV1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606091621517_inventory.cs" />
-    <Compile Include="Migrations\201606091621517_inventory.Designer.cs">
-      <DependentUpon>201606091621517_inventory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606110137298_inventory v3.cs" />
-    <Compile Include="Migrations\201606110137298_inventory v3.Designer.cs">
-      <DependentUpon>201606110137298_inventory v3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606130147359_inventory v4.cs" />
-    <Compile Include="Migrations\201606130147359_inventory v4.Designer.cs">
-      <DependentUpon>201606130147359_inventory v4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606130201519_fixing inventory.cs" />
-    <Compile Include="Migrations\201606130201519_fixing inventory.Designer.cs">
-      <DependentUpon>201606130201519_fixing inventory.cs</DependentUpon>
+    <Compile Include="Migrations\201606182352319_inventoryV1.cs" />
+    <Compile Include="Migrations\201606182352319_inventoryV1.Designer.cs">
+      <DependentUpon>201606182352319_inventoryV1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
@@ -521,23 +509,14 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606061413538_initial migration.resx">
-      <DependentUpon>201606061413538_initial migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606172231105_capstoneV1.resx">
+      <DependentUpon>201606172231105_capstoneV1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606081959309_calendar events.resx">
-      <DependentUpon>201606081959309_calendar events.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606182133357_fullCalendarV1.resx">
+      <DependentUpon>201606182133357_fullCalendarV1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606091621517_inventory.resx">
-      <DependentUpon>201606091621517_inventory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606110137298_inventory v3.resx">
-      <DependentUpon>201606110137298_inventory v3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606130147359_inventory v4.resx">
-      <DependentUpon>201606130147359_inventory v4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606130201519_fixing inventory.resx">
-      <DependentUpon>201606130201519_fixing inventory.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606182352319_inventoryV1.resx">
+      <DependentUpon>201606182352319_inventoryV1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

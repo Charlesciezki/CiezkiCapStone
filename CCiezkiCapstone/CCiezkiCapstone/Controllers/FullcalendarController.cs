@@ -46,7 +46,7 @@ namespace CCiezkiCapstone.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "event_id,title,date,start,end,url,description")] FullcalendarModel fullcalendarModel)
+        public ActionResult Create(FullcalendarModel fullcalendarModel)
         {
             if (ModelState.IsValid)
             {

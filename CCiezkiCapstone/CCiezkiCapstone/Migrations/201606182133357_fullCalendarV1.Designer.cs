@@ -7,13 +7,13 @@ namespace CCiezkiCapstone.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class inventoryv3 : IMigrationMetadata
+    public sealed partial class fullCalendarV1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(inventoryv3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(fullCalendarV1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201606110137298_inventory v3"; }
+            get { return "201606182133357_fullCalendarV1"; }
         }
         
         string IMigrationMetadata.Source

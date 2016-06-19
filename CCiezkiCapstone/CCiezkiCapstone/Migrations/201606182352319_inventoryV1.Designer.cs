@@ -7,13 +7,13 @@ namespace CCiezkiCapstone.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class initialmigration : IMigrationMetadata
+    public sealed partial class inventoryV1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialmigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(inventoryV1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201606061413538_initial migration"; }
+            get { return "201606182352319_inventoryV1"; }
         }
         
         string IMigrationMetadata.Source

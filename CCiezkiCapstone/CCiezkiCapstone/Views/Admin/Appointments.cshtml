@@ -8,7 +8,7 @@
 }
 @foreach (var item in Model)
 {
-    theAppointments.Add(new List<object>() {item.title, item.date, item.event_id });
+    theAppointments.Add(new List<object>() {item.title, item.date, item.description, item.address, item.event_id });
 }
 
 <!DOCTYPE html>
@@ -20,12 +20,7 @@
 </head>
 <body>
     <div>
-        <h2>Appointments</h2>
-        @*@using (Html.BeginForm("Index", "Home"))
-        {
-            @Html.AntiForgeryToken()
-            <input type="submit" value="Programs" class="btn btn-default" />
-        }*@
+        <h2>My Appointments</h2>
 
         @section scripts{
             <script type="text/javascript">
@@ -42,35 +37,26 @@
                             center: 'title',
                             right: 'month, agendaWeek, agendaDay'
                         },
+                        timezone: "local",
                         defaultView: 'month',
                         editable: true,
                         allDaySlot: false,
                         selectable: true,
                         slotMinutes: 15,
                         ignoreTimezone: false,
-                        select: function(start, allDay)
-                        {
-                            var events = @Html.Raw(Json.Encode(theAppointments));
-                            for(var i = 0; i < events.length; i++){
-                                calendar.fullCalendar('renderEvent', 
-                                    {
-                                        //timezone: CDT,
-                                        title: events[i][0],
-                                        start: events[i][1],
-                                        //end: events[i][1],
-                                        allDay: false
-                                    },
-                                    true 
-                                );
-                            }
-                            calendar.fullCalendar('unselect');
-                        }, 
-                        //eventRender: function(event, element) {
-                        //    element.qtip({
-                        //        content: event.description
-                        //    });
-                        //}
                     });
+                    var events = @Html.Raw(Json.Encode(theAppointments));
+                    for(var i = 0; i < events.length; i++){
+                        calendar.fullCalendar('renderEvent',
+                            {
+                                title: events[i][0]+ "\n" +events[i][2]+ "\n" +events[i][3],
+                                start: events[i][1],
+                                allDay: false
+                                
+                            },
+                            true 
+                        );
+                    }
                 }); 
                 
             </script>

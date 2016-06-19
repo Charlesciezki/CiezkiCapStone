@@ -18,7 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.productName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.productName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.productName, new { htmlAttributes = new { @class = "form-control", placeholder="Enter product name here"} })
                 @Html.ValidationMessageFor(model => model.productName, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -26,7 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.price, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter price of product here" } })
                 @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.quantity, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.quantity, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter amount in stock here" } })
                 @Html.ValidationMessageFor(model => model.quantity, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.warningLevel, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.warningLevel, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.warningLevel, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter level you will get email at" } })
                 @Html.ValidationMessageFor(model => model.warningLevel, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -50,8 +50,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.refillLevel, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.refillLevel, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.refillLevel, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter an absolute refill amount" } })
                 @Html.ValidationMessageFor(model => model.refillLevel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.url, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.url, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter product url here" } })
+                @Html.ValidationMessageFor(model => model.url, "", new { @class = "text-danger" })
             </div>
         </div>
 

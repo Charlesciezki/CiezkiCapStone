@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Admin_Layout.cshtml";
 }
 
-<h2>Your Inventory</h2>
+<h2>SBO Inventory Tracker</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Inventory Item", "Create")
 </p>
 <p>
     Running low on anything? Start refilling here! Yes you can use your paypal! 
@@ -31,7 +31,9 @@
         <th>
             @Html.DisplayNameFor(model => model.refillLevel)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.url)
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -50,6 +52,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.refillLevel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.url)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

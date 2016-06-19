@@ -3,16 +3,16 @@ namespace CCiezkiCapstone.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class fixinginventory : DbMigration
+    public partial class fullCalendarV1 : DbMigration
     {
         public override void Up()
         {
-            DropColumn("dbo.InventoryModels", "url");
+            AlterColumn("dbo.FullcalendarModels", "description", c => c.String(nullable: false));
         }
         
         public override void Down()
         {
-            AddColumn("dbo.InventoryModels", "url", c => c.Int(nullable: false));
+            AlterColumn("dbo.FullcalendarModels", "description", c => c.String());
         }
     }
 }

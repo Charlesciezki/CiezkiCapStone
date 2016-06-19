@@ -72,7 +72,7 @@ namespace CCiezkiCapstone.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,productName,price,quantity,warningSent,warningLevel,refillLevel")] InventoryModel inventoryModel)
+        public ActionResult Create([Bind(Include = "Id,productName,price,quantity,warningSent,warningLevel,refillLevel,url")] InventoryModel inventoryModel)
         {
             if (ModelState.IsValid)
             {
@@ -104,7 +104,7 @@ namespace CCiezkiCapstone.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,productName,price,quantity,warningSent,warningLevel,refillLevel")] InventoryModel inventoryModel)
+        public ActionResult Edit([Bind(Include = "Id,productName,price,quantity,warningSent,warningLevel,refillLevel,url")] InventoryModel inventoryModel)
         {
             if (ModelState.IsValid)
             {

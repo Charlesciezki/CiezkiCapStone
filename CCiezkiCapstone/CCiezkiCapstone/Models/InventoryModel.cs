@@ -34,6 +34,10 @@ namespace CCiezkiCapstone.Models
         [Required]
         [Display(Name = "Refill Level")]
         public int refillLevel { get; set; }
-        
+
+        [Display(Name = "Url")]
+        [DataType(DataType.Url)]
+        public string url { get; set; }
+
     }
 }
