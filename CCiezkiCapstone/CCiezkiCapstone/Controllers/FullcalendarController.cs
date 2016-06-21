@@ -6,6 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using SelectPdf;
 using CCiezkiCapstone.Models;
 
 namespace CCiezkiCapstone.Controllers
@@ -50,6 +53,26 @@ namespace CCiezkiCapstone.Controllers
         {
             if (ModelState.IsValid)
             {
+                // create a new pdf document
+                PdfDocument doc = new PdfDocument();
+
+                // add a new page to the document
+                PdfPage page = doc.AddPage();
+
+                // create a new pdf font
+                PdfFont font = doc.AddFont(PdfStandardFont.Helvetica);
+                font.Size = 20;
+
+                // create a new text element and add it to the page
+                PdfTextElement text = new PdfTextElement(50, 50, fullcalendarModel.title.ToString()+ "\n" + fullcalendarModel.address.ToString() + "\n" + fullcalendarModel.description.ToString() + "\n" + fullcalendarModel.date.ToString(), font);
+                page.Add(text);
+                doc.Save("C:/Users/Charles/Documents/Visual Studio 2015/Projects/CiezkiCapStone/CCiezkiCapstone/CCiezkiCapstone/Invoices/"+ fullcalendarModel.title.ToString() +".pdf");
+                // save pdf document
+                //doc.Save("~/Sample.pdf");
+
+                // close pdf document
+                doc.Close();
+
                 db.FullcalendarModel.Add(fullcalendarModel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
