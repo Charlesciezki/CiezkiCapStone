@@ -11,20 +11,22 @@
     <title>Admin Control Page</title>
 </head>
 <body>
-    <div>
-        <h2>Admin Control Page</h2>
-        @using (Html.BeginForm("Appointments", "Admin"))
-        {
-            @Html.AntiForgeryToken()
-            <input type="submit" value="Appointments" class="btn btn-default" />
-        }
-        @using (Html.BeginForm("Index", "Inventory"))
-        {
-            @Html.AntiForgeryToken()
-            <input type="submit" value="Inventory" class="btn btn-default" />
-        }
-        <a href="https://www.sandbox.paypal.com/"><button type="submit" class="btn btn-default">Pay Employees</button></a>
-</div>
+    <center>
+        <div>
+            <h2>Admin Control Page</h2>
+            @using (Html.BeginForm("Appointments", "Admin"))
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Appointment Calendar" class="btn btn-default" />
+            }
+            @using (Html.BeginForm("Index", "Inventory"))
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Inventory Tracker" class="btn btn-default" />
+            }
+            <a><button type="submit" class="btn btn-default" onclick="window.open('https://www.sandbox.paypal.com/')">Pay Employees</button></a>
+        </div>
+    </center>
 </body>
 </html>
 

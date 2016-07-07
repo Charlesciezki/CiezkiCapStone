@@ -23,6 +23,25 @@ namespace CCiezkiCapstone.Controllers
             return View(db.FullcalendarModel.ToList());
         }
 
+        public ActionResult AdminIndex()
+        {
+            return View(db.FullcalendarModel.ToList());
+        }
+
+        public ActionResult AdminDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            FullcalendarModel fullcalendarModel = db.FullcalendarModel.Find(id);
+            if (fullcalendarModel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(fullcalendarModel);
+        }
+
         // GET: Fullcalendar/Details/5
         public ActionResult Details(int? id)
         {
@@ -44,6 +63,10 @@ namespace CCiezkiCapstone.Controllers
             return View();
         }
 
+        public ActionResult AdminCreate()
+        {
+            return View();
+        }
         // POST: Fullcalendar/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -61,12 +84,12 @@ namespace CCiezkiCapstone.Controllers
 
                 // create a new pdf font
                 PdfFont font = doc.AddFont(PdfStandardFont.Helvetica);
-                font.Size = 20;
+                font.Size = 15;
 
                 // create a new text element and add it to the page
-                PdfTextElement text = new PdfTextElement(50, 50, fullcalendarModel.title.ToString()+ "\n" + fullcalendarModel.address.ToString() + "\n" + fullcalendarModel.description.ToString() + "\n" + fullcalendarModel.date.ToString(), font);
+                PdfTextElement text = new PdfTextElement(50, 50, fullcalendarModel.title.ToString()+ "\n" + fullcalendarModel.address.ToString() + "\n" + fullcalendarModel.description.ToString() + "\n" + fullcalendarModel.date.ToString() + "\n" + "Signature:_________________________________" + "\n" + "Total:______________________" + "\n" + "Tax:______________________" + "\n" + "Subtotal:______________________", font);
                 page.Add(text);
-                doc.Save("C:/Users/Charles/Documents/Visual Studio 2015/Projects/CiezkiCapStone/CCiezkiCapstone/CCiezkiCapstone/Invoices/"+ fullcalendarModel.title.ToString() +".pdf");
+                doc.Save("C:/Users/Charles/Documents/Visual Studio 2015/Projects/CiezkiCapStone/CCiezkiCapstone/CCiezkiCapstone/Invoices/"+ fullcalendarModel.title.ToString() + ".pdf");
                 // save pdf document
                 //doc.Save("~/Sample.pdf");
 
@@ -101,13 +124,13 @@ namespace CCiezkiCapstone.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "event_id,title,date,start,end,url,description")] FullcalendarModel fullcalendarModel)
+        public ActionResult Edit([Bind(Include = "event_id,title,date,start,address,description")] FullcalendarModel fullcalendarModel)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(fullcalendarModel).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("AdminIndex");
             }
             return View(fullcalendarModel);
         }
@@ -135,7 +158,7 @@ namespace CCiezkiCapstone.Controllers
             FullcalendarModel fullcalendarModel = db.FullcalendarModel.Find(id);
             db.FullcalendarModel.Remove(fullcalendarModel);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("AdminIndex");
         }
 
         protected override void Dispose(bool disposing)

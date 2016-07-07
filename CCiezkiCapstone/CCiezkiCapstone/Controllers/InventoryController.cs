@@ -16,13 +16,13 @@ namespace CCiezkiCapstone.Controllers
     public class InventoryController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        public async Task warningMail(int quantity, string productName)
+        public async Task warningMail(int quantity, string productName, string url)
         {
             var myMessage = new SendGridMessage();
             myMessage.From = new MailAddress("noReply@charlesCapstone.com", "noReply@charlesCapstone");
             myMessage.AddTo("charlesciezki@yahoo.com");
             myMessage.Subject = productName + " is running low!";
-            myMessage.Text = "Hello, you need to refill your " + productName + " you only have " + quantity + " left!";
+            myMessage.Text = "Hello, you need to refill your " + productName + " you only have " + quantity + " left!" + "\n" + "Buy more here: " + url;
             var credentials = new NetworkCredential("quikdevstudent", "Lexusi$3"); //login credentials, don't change
             var transportWeb = new Web(credentials); //don't change
             await transportWeb.DeliverAsync(myMessage); //dont change
@@ -37,7 +37,7 @@ namespace CCiezkiCapstone.Controllers
                 {
                     if (item.warningSent.Equals(0))
                     {
-                        warningMail(item.quantity,item.productName);
+                        warningMail(item.quantity,item.productName,item.url);
                         item.warningSent = 1;
                     }
                 }

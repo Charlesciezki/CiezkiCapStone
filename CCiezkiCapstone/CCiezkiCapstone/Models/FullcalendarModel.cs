@@ -13,19 +13,19 @@ namespace CCiezkiCapstone.Models
         public int event_id { get; set; }
 
         [Required]
-        [Display(Name = "Your name")]
+        [Display(Name = "Customer name")]
         public string title { get; set; }
 
         [Required]
-        [Display(Name = "Enter date you would like a cleaning")]
+        [Display(Name = "Requested date of cleaning")]
         public DateTime date { get; set; }
 
         [Required]
-        [Display(Name = "Address you would like cleaned")]
+        [Display(Name = "Address of cleaning")]
         public string address { get; set; }
 
         [Required]
-        [Display(Name = "Enter description of cleaning")]
+        [Display(Name = "Description of cleaning")]
         public string description { get; set; }
 
         //[Display(Name = "Event End Time")]

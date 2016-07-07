@@ -2,18 +2,20 @@
 
 @{
     ViewBag.Title = "Your Inventory";
+    
     Layout = "~/Views/Shared/_Admin_Layout.cshtml";
 }
+<center>
+    <h2>SBO Inventory Tracker</h2>
 
-<h2>SBO Inventory Tracker</h2>
-
-<p>
-    @Html.ActionLink("Create New Inventory Item", "Create")
-</p>
-<p>
-    Find the best products here: 
-    <a href="http://www.jondon.com/">http://www.jondon.com/</a>
-</p>
+    <p>
+        @Html.ActionLink("Create New Inventory Item", "Create")
+    </p>
+    <p>
+        Find the best products here:
+        <a href="http://www.jondon.com/">http://www.jondon.com/</a>
+    </p>
+</center>
 <table class="table">
     <tr>
         <th>

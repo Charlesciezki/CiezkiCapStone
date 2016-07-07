@@ -1,0 +1,99 @@
+﻿@model CCiezkiCapstone.Models.FullcalendarModel
+@{
+    ViewBag.Title = "AdminCreate";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<h2>AdminCreate</h2>
+
+<center>
+    <div>
+        <h2>Create an appointment form</h2>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Request carpet cleaning</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.title, htmlAttributes: new { @class = "control-label col-md-6" })
+                <div class="col-md-11">
+                    @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control", placeholder = "Your name" } })
+                    @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.date, htmlAttributes: new { @class = "control-label col-md-6" })
+                <div class="col-md-11">
+                    @Html.EditorFor(model => model.date, new { htmlAttributes = new { @class = "form-control", placeholder = "YYYY-MM-DD HH:MM" } })
+                    @Html.ValidationMessageFor(model => model.date, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label col-md-6" })
+                <div class="col-md-11">
+                    @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control", placeholder = "Full address" } })
+                    @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.description, htmlAttributes: new { @class = "control-label col-md-6" })
+                <div class="col-md-11">
+                    @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter a short description of cleaning" } })
+                    @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-6">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+</center>
+<div>
+    <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="MFSH6AMY4JXG2">
+        <table style="color:black">
+            <tr><td><input type="hidden" name="on0" style="color:white" value="Add cleaning options here">Add cleaning options here</td></tr>
+            <tr>
+                <td>
+                    <select name="os0">
+                        <option value="2 Bedrooms approx 120 sqft">2 Bedrooms approx 120 sqft $90.00 USD</option>
+                        <option value="3 Bedrooms approx 120 sqft">3 Bedrooms approx 120 sqft $130.00 USD</option>
+                        <option value="1 Bedroom approx 120sqft livingroom approx 400 sqft">1 Bedroom approx 120sqft livingroom approx 400 sqft $165.00 USD</option>
+                        <option value="2 Bedroom approx 120sqft livingroom approx 400 sqft">2 Bedroom approx 120sqft livingroom approx 400 sqft $210.00 USD</option>
+                        <option value="3 Bedroom approx 120sqft livingroom approx 400 sqft">3 Bedroom approx 120sqft livingroom approx 400 sqft $250.00 USD</option>
+                        <option value="Whole house approx 2000 sqft">Whole house approx 2000 sqft $550.00 USD</option>
+                        <option value="Whole house approx 2500 sqft">Whole house approx 2500 sqft $750.00 USD</option>
+                        <option value="Whole house approx 3000 sqft">Whole house approx 3000 sqft $950.00 USD</option>
+                        <option value="Heavy traffic areas">Heavy traffic areas $135.00 USD</option>
+                        <option value="Pet stains / Color stains">Pet stains / Color stains $140.00 USD</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+
+
+    <div>
+        <p><b>Note that the cart prices are an estimate, you may pay the estimate now</b></p>
+        <p><b>if you would like, or you may wait until the job is done.</b></p>
+    </div>
+
+    <div>
+        @Html.ActionLink("Back to List", "AdminIndex")
+    </div>
+
+</div>

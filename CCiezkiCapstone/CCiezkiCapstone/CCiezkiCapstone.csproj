@@ -503,6 +503,9 @@
     <Content Include="Views\Accounts\Index.cshtml" />
     <Content Include="Views\Shared\_Admin_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_NoView_Layout.cshtml" />
+    <Content Include="Views\Fullcalendar\AdminIndex.cshtml" />
+    <Content Include="Views\Fullcalendar\AdminDetails.cshtml" />
+    <Content Include="Views\Fullcalendar\AdminCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -18,13 +18,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Welcome to the small business overhaul!", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("Welcome to the small business overhaul!", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Admin Controls", "AdminControls", "Home")</li>
-                    <li>@Html.ActionLink("Appointment forms", "Index", "Fullcalendar")</li>
+                    <li>@Html.ActionLink("Appointment forms", "AdminIndex", "Fullcalendar")</li>
                 </ul>
                 @Html.Partial("_Admin_LoginPartial")
             </div>
@@ -34,7 +34,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Small Business Overhaul /||\ @Html.ActionLink("About", "About", "Home") /||\ @Html.ActionLink("Contact", "Contact", "Home") /||\ @Html.ActionLink("SalesForce Log in", "Login", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</p>
+            <p>&copy; @DateTime.Now.Year - Small Business Overhaul /||\ @Html.ActionLink("About", "About", "Home") /||\ @Html.ActionLink("Contact", "Contact", "Home")</p>
         </footer>
     </div>
 
